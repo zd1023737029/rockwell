@@ -1,7 +1,7 @@
 <template>
 	<safe-area class="page">
 		<view class="header">
-			<text class="title">首页</text>
+			<text class="title">首页12121212</text>
 		</view>
 		<view class="body">
 			<text class="h1">Hello , APICloud</text>
