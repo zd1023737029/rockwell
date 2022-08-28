@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测量界面</title>
+    <link rel="stylesheet" href="../../../css/api.css" />
+    <link rel="stylesheet" href="./timeSet.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 页面标题 -->
+        <header class='header' id='header'>
+            <div class="header-left" @click="api.closeWin()">返回</div>
+            <div>
+                时间设置
+            </div>
+        </header>
+        <!-- 页面内容 -->
+        <section class="section">
+            <input type="date" v-model="date" placeholder="请选择日期">
+            <input type="time" v-model="time" placeholder="请选择时间">
+            <button @click='timeClick()'>设置</button>
+        </section>
+    </div>
+
+    <script src="../../../script/api.js"></script>
+    <script src="../../../script/router/router.js"></script>
+    <script src="../../../script/vue/vue.min.js"></script>
+    <script src="./timeSet.js"></script>
+</body>
+
+</html>

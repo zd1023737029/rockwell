@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测量界面</title>
+    <link rel="stylesheet" href="../../../css/api.css" />
+    <link rel="stylesheet" href="./HRC.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 页面标题 -->
+        <header class='header' id='header'>
+            <div class="header-left" @click="api.closeWin()">返回</div>
+            <div>
+                HRC
+            </div>
+        </header>
+        <!-- 页面内容 -->
+        <section class="section">
+            <div class="set-row">
+                <div class="set-row-left">
+                    <span>T1</span>
+                    <input type="number" v-model="t1" class="left-input">
+                    <span>s</span>
+                </div>
+                <div class="set-row-right-btn" @click='T1Click()'>
+                    设定
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../../../script/api.js"></script>
+    <script src="../../../script/router/router.js"></script>
+    <script src="../../../script/vue/vue.min.js"></script>
+    <script src="./HRC.js"></script>
+</body>
+
+</html>

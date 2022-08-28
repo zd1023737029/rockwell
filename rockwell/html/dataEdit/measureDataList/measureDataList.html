@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测量界面</title>
+    <link rel="stylesheet" href="../../../css/api.css" />
+    <link rel="stylesheet" href="./measureDataList.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 页面标题 -->
+        <header class='header' id='header'>
+            <div class="header-left" @click="api.closeWin()">返回</div>
+            <div>
+                测量数据信息
+            </div>
+        </header>
+        <!-- 页面内容 -->
+        <section class="section">
+            <div class="list-page">
+                <div class="list-header">
+                    <div class="delete-checkbox" v-show='deleteShow' @click='switchCheckAll()'>
+                        {{checkAll?'取消':'全选'}}
+                    </div>
+                    <div class="list-header-order">序号</div>
+                    <div class="list-header-order">标尺</div>
+                    <div class="list-header-order">数值</div>
+                </div>
+                <div class="list-content">
+                    <input type="checkbox" v-model='test'>
+                    <input type="radio" v-model='test' @change="change">
+
+                    <div v-for='(item,index) in list' :key='index' class="list-content-item">
+                        <div class="delete-checkbox" v-show='deleteShow'>
+                            <input type="checkbox" v-model='checkedList'  @change="change" :value='item.order' :id='"HRC"+item.order'>
+                        </div>
+                        <div class="list-header-order" :for='"HRC"+item.order'>
+                            {{item.order}}
+                        </div>
+                        <div class="list-header-order" :for='"HRC"+item.order'>
+                            {{item.HRC}}
+                        </div>
+                        <div class="list-header-order" :for='"HRC"+item.order'>
+                            {{item.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-item" v-show='!deleteShow'>打印</div>
+                    <div class="footer-item" v-show='!deleteShow' @click='showDelete()'>删除</div>
+                    <div class="footer-item" v-show='deleteShow' @click='deletConfirm()'>确定</div>
+                    <div class="footer-item" v-show='deleteShow' @click='deletCancel()'>取消</div>
+                    <div class="footer-item">上一页</div>
+                    <div class="footer-item">下一页</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../../../script/api.js"></script>
+    <script src="../../../script/router/router.js"></script>
+    <script src="../../../script/vue/vue.min.js"></script>
+    <script src="./measureDataList.js"></script>
+</body>
+
+</html>
